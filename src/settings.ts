@@ -6,11 +6,12 @@ export function pluginIconName(): string {
 }
 
 export async function registerSettings(): Promise<void> {
+ // settings的section注册
   await joplin.settings.registerSection('outline.settings', {
     label: 'Outline',
     iconName: pluginIconName(),
   });
-
+// settings具体变量注册，类似于字典类型
   await joplin.settings.registerSettings({
     isVisible: {
       type: SettingItemType.Bool,
